@@ -73,10 +73,6 @@ foreach ($rules as $to => $what){
 							}
 						}
 						break;
-					
-					case 'allow':
-						
-						break;
 				}
 			}
 		} else {
@@ -90,4 +86,3 @@ foreach ($rules as $to => $what){
 		
 	}
 }
-system('notify-send "Sorter" "Папки Отсортированны"');
