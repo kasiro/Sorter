@@ -1,0 +1,18 @@
+<?php
+
+import 'fs';
+
+require './rules.php';
+
+foreach ($rules as $where => $to){
+	$dir = $downloads;
+	$to = $downloads_to_name;
+	$folder = basename($where);
+	$newPath = "$dir/$to/$folder";
+	$from = "$dir/$folder";
+	if (!file_exists($newPath) && file_exists($from)){
+		// mkdir($newPath);
+		nl 'copy: "'.$from.'"...';
+		fs::folder_copy($from, $newPath);
+	}
+}
